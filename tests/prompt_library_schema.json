@@ -1,0 +1,60 @@
+{  
+    "$schema": "https://json-schema.org/draft/2020-12/schema", 
+    "title": "prompt_template",  
+    "description": "a prompt template to focus the LLM on specific tasks",  
+    "type": "array",
+    "properties": {  
+        "Template name": {  
+            "description": "The name of the prompt template",  
+            "type": ["string","null"]  
+        },  
+        "Purpose": {  
+            "description": "The purpose of the prompt template",  
+            "type": ["string","null"]   
+        },  
+        "Inputs": {  
+            "description": "The inputs required for the prompt template",  
+            "type": ["string","null"]   
+        },  
+        "System prompt": {  
+            "description": "The system prompt to be used in the LLM call",  
+            "type": ["array","null"],
+            "items": {
+                "type": ["string","null"] 
+            }
+        },  
+        "User prompt": {  
+            "description": "The user prompt to be used in the LLM call",  
+            "oneOf": [
+                {
+                    "type": "string"
+                },
+                {
+                    "type": "null"
+                },
+                {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            ]
+        }, 
+        "Output format": {  
+            "description": "The output format expected from the LLM",  
+            "type": ["string","null"] 
+        },
+        "Guardrails": {  
+            "description": "The guardrails to be used in the LLM call",  
+            "type": ["array","null"],
+            "items": {
+                "type": ["string","null"]
+            }
+        },
+        "Suggested params": {  
+            "description": "The suggested parameters to be used in the LLM call",  
+            "type": ["string","null"] 
+        } 
+    },   
+    "required": ["Template name", "Purpose", "Inputs", "System prompt", "User prompt", "Output format", "Guardrails", "Suggested params"]
+}

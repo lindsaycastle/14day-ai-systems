@@ -1,7 +1,5 @@
-{
-     
-    
-    "index_builder": {
+[ 
+        {
         "Template name": "Index Builder",
         "Purpose": "take list of headings for a book and create an index of the book or section",
         "Inputs": "Book or book passage",
@@ -21,8 +19,7 @@
             ],
         "Suggested params": ""
         },
-
-    "rewriter": {
+        {
         "Template name": "passage rewriter",
         "Purpose": "rewrite the passage in a different style or tone.",
         "Inputs": "",
@@ -42,8 +39,7 @@
             ],
         "Suggested params": "mid temperatue for a little creativity"
         } ,
-
-    "index_helper": {
+{
         "Template name": "Index Helper",
         "Purpose": "help user search index for relevant information.",
         "Inputs": "{book_index}",
@@ -64,16 +60,14 @@
             ],
         "Suggested params": "low temperature for consistency"
         },   
-
-
-    "source_book_summerizer": {
+        {
         "Template name": "Source book summerizer",
         "Purpose": "Summarise a book or text into 5 dot points of no more than 1 sentance long.",
         "Inputs": "Section of a book or text to be summarized. In text",
         "System prompt":
             [
                 "You are a literary editor. ",
-                "You need to summarize the given text, without providing any information outside of the text.",                        
+                "You need to summarize the given text, without providing any information outside of the text."                       
             ],
         "User prompt": 
         [
@@ -93,9 +87,8 @@
             ],
         "Suggested params": "low temperature for consistency"
         },
-
-     "base_template": {
-        "Template name": "",
+    {
+        "Template name": "base_template",
         "Purpose": "",
         "Inputs": "",
         "System prompt":
@@ -112,4 +105,4 @@
             ],
         "Suggested params": ""
         }  
-}
+]
