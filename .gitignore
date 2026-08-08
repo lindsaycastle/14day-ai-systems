@@ -11,3 +11,8 @@ __pycache__/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Index data
+data/index.json
+data/docs/pdfcoffee.com_v5-core-rulebook--pdf-free.pdf
+data/docs/pdfcoffee.com_v5-players-guide-digital-low-res-v2-pdf-free (2).pdf
