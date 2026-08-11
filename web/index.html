@@ -1,5 +1,17 @@
 <!doctype html>
 <html lang="en">
+<script>
+  function getSessionId() {
+    const key = "day8_session_id";
+    let id = localStorage.getItem(key);
+    if (!id) {
+      // Simple client-generated session id
+      id = "sess_" + crypto.randomUUID();
+      localStorage.setItem(key, id);
+    }
+    return id;
+  }
+</script>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -46,11 +58,13 @@
       statusEl.textContent = "Calling backend...";
 
       try {
-        const res = await fetch("/api/ask", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ prompt })
-        });
+        const session_id = getSessionId();
+        
+        const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ session_id, prompt })
+      });
 
         const data = await res.json();
         if (!data.ok) {

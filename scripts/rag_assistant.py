@@ -234,6 +234,21 @@ def main():
         answer = answer_with_context(client, q, retrieved)
         print("Assistant:\n" + answer + "\n")
 
+def generate__rag_answer(user_text: str) -> str:
+    load_dotenv()
+    api_key = os.getenv("OPENAI_API_KEY")
+    if not api_key:
+        raise RuntimeError("Missing OPENAI_API_KEY in .env")
+
+    client = OpenAI(api_key=api_key)
+
+    index = load_index()
+    retrieved = retrieve_top_k(client, index, user_text, k=5)
+    answer = answer_with_context(client, user_text, retrieved)
+
+    return answer
+
+
 
 if __name__ == "__main__":
     main()
