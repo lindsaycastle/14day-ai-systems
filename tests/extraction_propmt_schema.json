@@ -1,0 +1,23 @@
+{  
+    "$schema": "https://json-schema.org/draft/2020-12/schema", 
+    "title": "prompt_template",  
+    "description": "a prompt template to focus the LLM on specific tasks",  
+    "type": "object",
+    "properties": {
+        "summary": {  
+            "description": "summary response from LMM",  
+            "type": "string"  
+        },
+        "category": {  
+            "description": "category of the prompt",  
+            "type": "string",
+            "item" : {"enum": ["yes","no","uncertain"]}
+        },
+        "confidence": {  
+            "description": "confidence level of the response",  
+            "type": "number",
+            "minimum": 0.0,
+            "maximum": 1.0
+        }
+    }
+}
