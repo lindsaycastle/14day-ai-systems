@@ -7,7 +7,6 @@ from openai import OpenAI
 
 from src import tools as tool_impl
 
-
 ToolFn = Callable[..., Dict[str, Any]]
 
 TOOL_REGISTRY: Dict[str, ToolFn] = {
