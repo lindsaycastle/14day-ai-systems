@@ -3,7 +3,7 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
-#from scripts.rate_limiter import limit
+from scripts.rate_limiter import limit
 from src.ai_service import generate_answer_with_memory
 from scripts.rag_assistant import generate__rag_answer
 from src.session_store import (
